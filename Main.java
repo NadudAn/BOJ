@@ -3,21 +3,24 @@ package study2;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
 
-public class Main {								//백준 1929번 소수 구하기
+public class Main {								//백준 4948번 베르트랑 공준
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		int cnt;
 		
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
-		
-		for(int i = n; i <= m; i++) {
-			if(IsPrime(i)) System.out.println(i);
+		while(true) {
+			int n = Integer.parseInt(br.readLine());
+			if(n == 0) break;
+			
+			cnt = 0;
+			for(int i = n + 1; i <= 2 * n; i++) {
+				if(IsPrime(i)) ++cnt;
+			}
+			
+			System.out.println(cnt);
 		}
-
 	}
 	
 	public static boolean IsPrime(int n) {
