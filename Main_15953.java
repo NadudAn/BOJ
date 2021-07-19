@@ -12,7 +12,6 @@ public class Main_15953 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
-		
 		int t = Integer.parseInt(br.readLine()), a = 0, b = 0, m = 0, cnt = 0;
 		
 		for(int i = 0; i < t; i++) {
@@ -24,6 +23,7 @@ public class Main_15953 {
 			if(a <= 21 && a != 0)
 				for(int j = 1; j <= 6; j++) {
 					a -= j;
+					
 					if(a <= 0) {
 						m += CF2017[j - 1];
 						break;
@@ -32,6 +32,7 @@ public class Main_15953 {
 			if(b <= 31 && b != 0) {
 				for(int j = 1; j <= 16; j *= 2) {
 					b -= j;
+					
 					if(b <= 0) {
 						m += CF2018[cnt];
 						break;
